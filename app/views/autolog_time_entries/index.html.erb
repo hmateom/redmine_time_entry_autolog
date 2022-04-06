@@ -1,0 +1,27 @@
+<%= javascript_include_tag 'application', plugin: 'redmine_time_entry_autolog' %>
+<h2><%= l(:'time_entry_autolog.label_autolog_time_entries') %></h2>
+
+<%= form_for :time_entry_autolog, remote: true, :url => {:action => 'save'} do |f| %>
+	<fieldset class="box tabular">
+		<legend>Imputar automáticamente en ticket</legend>
+		<div class="splitcontentleft">
+			<p><%= f.number_field :issue_id %>
+			<%= f.label :issue_id, 'Ticket' %></p>
+		</div>
+		<div class="splitcontentright">
+			<p><%= f.select :user_id, options_from_collection_for_select(@users, 'id', @name_field), {} %>
+			<%= f.label :user_id, 'Autor' %></p>
+		</div>
+		<p><%= f.number_field :hours %>
+		<%= f.label :hours, 'Horas' %></p>
+		<div class="splitcontentleft">
+			<p><%= f.text_field :start_date, :size => 10%><%= calendar_for('time_entry_autolog_start_date') %>
+				<%= f.label :start_date, 'Fecha de inicio' %></p>
+		</div>
+		<div class="splitcontentright">
+			<p><%= f.text_field :end_date, :size => 10%><%= calendar_for('time_entry_autolog_end_date') %>
+				<%= f.label :end_date, 'Fecha fin' %></p>
+		</div>
+		<%= submit_tag(l(:button_save)) %>
+	</fieldset>
+<% end %>

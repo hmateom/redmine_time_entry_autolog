@@ -1,0 +1,7 @@
+es:
+  time_entry_autolog:
+    label_autolog_time_entries: Sistema automático de imputaciones de horas
+    label_prerequisites: Prerrequisitos
+    label_authorized_users: Usuarios autorizados
+    label_work_schedule: Horario de trabajo
+    label_winter_work_day: Jornada laboral de invierno

@@ -1,0 +1,7 @@
+<fieldset>
+	<legend><%=l(:"time_entry_autolog.label_prerequisites")%></legend>
+	<p>
+		<label><%=l(:"time_entry_autolog.label_authorized_users")%></label>
+		<%= select_tag 'settings[authorized_users]', options_from_collection_for_select(User.active, 'id', 'login', @settings['authorized_users']), multiple: true %>
+	</p>
+</fieldset>
