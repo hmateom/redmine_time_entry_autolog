@@ -5,3 +5,7 @@ es:
     label_authorized_users: Usuarios autorizados
     label_work_schedule: Horario de trabajo
     label_winter_work_day: Jornada laboral de invierno
+    label_autolog_mode: Modo de imputación automática de horas
+    winter_autolog_mode: Horario de invierno
+    equitable_autolog_mode: Equitativo
+    error_autolog_failed: Ha ocurrido un error mientras se imputaban automáticamente las horas.

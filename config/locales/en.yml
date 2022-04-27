@@ -7,3 +7,7 @@ en:
     label_authorized_users: Authorized users
     label_work_schedule: Work schedule
     label_winter_work_day: Winter work day
+    label_autolog_mode: Time entry autolog mode
+    winter_autolog_mode: Winter work schedule
+    equitable_autolog_mode: Equitable
+    error_autolog_failed: An error occurred while autologging time entries.

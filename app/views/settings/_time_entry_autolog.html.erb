@@ -5,3 +5,32 @@
 		<%= select_tag 'settings[authorized_users]', options_from_collection_for_select(User.active, 'id', 'login', @settings['authorized_users']), multiple: true %>
 	</p>
 </fieldset>
+<fieldset>
+	<legend><%=l(:"time_entry_autolog.label_work_schedule")%></legend>
+
+	<%
+	workdays = [1,2,3,4,5]
+	if !@settings['winter_workday_hours'].present?
+		@settings['winter_workday_hours'] = {}
+	end
+	%>
+
+	<table border="1">
+		<thead>
+	  		<tr>
+	  			<th></th>
+	  			<% workdays.each do |i|%>
+	  				<th><%=l(:"date.abbr_day_names")[i]%></th>
+	  			<% end %>
+	  		</tr>
+	  	</thead>
+	  	<tbody>
+	  		<tr>
+	  			<th><%=l(:"time_entry_autolog.label_winter_work_day")%></th>
+	  			<% workdays.each do |i|%>
+	  				<td><%= number_field_tag 'settings[winter_workday_hours]['+i.to_s+']', @settings['winter_workday_hours'][i.to_s], {:min => 0} %></td>
+	  			<% end %>
+	  		</tr>
+	  	</tbody>
+  	</table>
+</fieldset>
